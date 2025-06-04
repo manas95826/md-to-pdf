@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -22,5 +26,100 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Markdown Styles */
+.prose {
+  @apply max-w-none;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mb-6 text-gray-900;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mb-4 text-gray-800;
+}
+
+.prose h3 {
+  @apply text-xl font-bold mb-3 text-gray-800;
+}
+
+.prose p {
+  @apply mb-4 text-gray-700 leading-relaxed;
+}
+
+.prose ul {
+  @apply list-disc list-inside mb-4 text-gray-700;
+}
+
+.prose ol {
+  @apply list-decimal list-inside mb-4 text-gray-700;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose code {
+  @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono text-gray-800;
+}
+
+.prose pre {
+  @apply bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-sm;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-blue-500 pl-4 italic mb-4 text-gray-700 bg-blue-50 py-2 px-4 rounded-r-lg;
+}
+
+.prose a {
+  @apply text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200;
+}
+
+.prose img {
+  @apply max-w-full h-auto rounded-lg shadow-md my-4;
+}
+
+.prose table {
+  @apply w-full mb-4 border-collapse;
+}
+
+.prose th {
+  @apply bg-gray-100 px-4 py-2 text-left font-semibold text-gray-800 border border-gray-300;
+}
+
+.prose td {
+  @apply px-4 py-2 border border-gray-300 text-gray-700;
+}
+
+/* KaTeX Math Styles */
+.katex {
+  @apply text-lg;
+}
+
+.katex-display {
+  @apply my-4 overflow-x-auto overflow-y-hidden;
+}
+
+.katex-display > .katex {
+  @apply text-xl;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full hover:bg-gray-500 transition-colors duration-200;
 }
